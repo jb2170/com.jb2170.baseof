@@ -146,6 +146,17 @@ details details {
   text-decoration: underline double;
 }
 
+/* "_shortcodes/cite/*.html" */
+
+.cite-inline sup {
+  line-height: 0; /* stop <sup> from affecting the line spacing */
+  display: none; /* hide inline citation boxes by default */
+}
+
+.cite-inline:target sup {
+  display: inline; /* show inline citation box when citation id is the current url '#target' */
+}
+
 /* "_shortcodes/gallery.html" */
 
 .gallery {

@@ -1,0 +1,17 @@
+{{- if not (.Page.Store.Get "references") -}}
+  {{/*  touch 'references' slice  */}}
+  {{- .Page.Store.Set "references" slice -}}
+{{- end -}}
+
+{{- $idx := add (len (.Page.Store.Get "references")) 1 -}}
+{{/*  1 more than current length for 1-indexing  */}}
+{{- $text := .Get 0 -}}
+{{- $ref := .Get 1 -}}
+
+{{/*  store reference in .Page.Store  */}}
+{{- .Page.Store.Add "references" (slice (dict "idx" $idx "text" $text "ref" $ref)) -}}
+
+{{/*  render inline citation number  */}}
+{{- "" -}}
+<span id="cite-{{ $idx }}" class="cite-inline"><a href="{{ $ref }}">{{ $text }}</a><sup><a href="#ref-{{ $idx }}">[{{ $idx }}]</a></sup></span>
+{{- "" -}}
