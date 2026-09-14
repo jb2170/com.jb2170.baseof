@@ -153,8 +153,8 @@ details details {
   display: none; /* hide inline citation boxes by default */
 }
 
-.cite-inline:target sup {
-  display: inline; /* show inline citation box when citation id is the current url '#target' */
+body:has([id^="cite-"]:target, [id^="ref-"]:target) .cite-inline sup {
+  display: inline; /* show inline citation boxes when any citation or reference is the current url '#target' */
 }
 
 /* "_shortcodes/gallery.html" */
