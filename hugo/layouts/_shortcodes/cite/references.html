@@ -1,11 +1,15 @@
-{{ with .Page.Scratch.Get "references" }}
-<div class="references-container">
-  <ul>
-    {{ range . }}
-    <li id="ref-{{ .idx }}">
-      <span><a href="#cite-{{ .idx }}">[{{ .idx }}]</a></span> - <span><a href="{{ .ref }}">{{ .ref }}</a></span>
-    </li>
-    {{ end }}
-  </ul>
-</div>
-{{ end }}
+<details id="references">
+  <summary class="big-summary">References</summary>
+
+  {{ with .Page.Scratch.Get "references" }}
+  <div class="references-container">
+    <ul>
+      {{ range . }}
+      <li id="ref-{{ .idx }}">
+        <span><a href="#cite-{{ .idx }}">[{{ .idx }}]</a></span> - <span><a href="{{ .ref }}">{{ .ref }}</a></span>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+</details>
