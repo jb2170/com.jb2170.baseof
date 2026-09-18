@@ -1,3 +1,10 @@
+{{/*  Add text in an <a> tag with a hidden citation box [123] that contributes  */}}
+{{/*  to the 'cite/references' shortcode contents.                              */}}
+{{/*  Citation boxes are unhidden when the #references section is open.         */}}
+
+{{/*  Takes in positionals 'text' and 'ref'  */}}
+{{/*  eg {{< cite/inline "Mary, Princess Royal" "https://en.wikipedia.org/wiki/Mary,_Princess_Royal_and_Princess_of_Orange" >}}  */}}
+
 {{- if not (.Page.Store.Get "references") -}}
   {{/*  touch 'references' slice  */}}
   {{- .Page.Store.Set "references" slice -}}

@@ -1,3 +1,9 @@
+{{/*  Add plain text with a shown citation box [456] that contributes  */}}
+{{/*  to the 'cite/references' shortcode contents.                     */}}
+
+{{/*  Takes in positionals 'text' and 'ref'  */}}
+{{/*  eg {{< cite/box "William II of Orange" "https://en.wikipedia.org/wiki/William_II_of_Orange" >}}  */}}
+
 {{- if not (.Page.Store.Get "references") -}}
   {{/*  touch 'references' slice  */}}
   {{- .Page.Store.Set "references" slice -}}
