@@ -153,7 +153,7 @@ details details {
   display: none; /* hide inline citation boxes by default */
 }
 
-body:has([id^="cite-"]:target, [id^="ref-"]:target) .cite-inline sup {
+body:has(#references[open]) .cite-inline sup {
   display: inline; /* show inline citation boxes when any citation or reference is the current url '#target' */
 }
 
