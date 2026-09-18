@@ -157,6 +157,18 @@ body:has([id^="cite-"]:target, [id^="ref-"]:target) .cite-inline sup {
   display: inline; /* show inline citation boxes when any citation or reference is the current url '#target' */
 }
 
+#references table {
+  margin-block: 1em;
+}
+
+#references tr {
+  vertical-align: top;
+}
+
+#references td:first-child {
+  text-align: end;
+}
+
 /* "_shortcodes/gallery.html" */
 
 .gallery {

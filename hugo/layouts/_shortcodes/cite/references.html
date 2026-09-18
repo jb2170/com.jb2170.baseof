@@ -2,14 +2,16 @@
   <summary class="big-summary">References</summary>
 
   {{ with .Page.Scratch.Get "references" }}
-  <div class="references-container">
-    <ul>
+  <table>
+    <tbody>
       {{ range . }}
-      <li id="ref-{{ .idx }}">
-        <span><a href="#cite-{{ .idx }}">[{{ .idx }}]</a></span> - <span><a href="{{ .ref }}">{{ .ref }}</a></span>
-      </li>
+      <tr id="ref-{{ .idx }}">
+        <td><a href="#cite-{{ .idx }}">[{{ .idx }}]</a></td>
+        <td>-</td>
+        <td><a href="{{ .ref }}">{{ .ref }}</a></td>
+      </tr>
       {{ end }}
-    </ul>
-  </div>
+    </tbody>
+  </table>
   {{ end }}
 </details>
