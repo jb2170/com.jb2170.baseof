@@ -1,0 +1,21 @@
+{{ with .Page.Scratch.Get "references" }}
+{{ $seen := slice }}
+<div class="references-container">
+  <ul>
+    {{ range . }}
+      {{ $ref := .ref }}
+      {{ if (where $seen "ref" $ref) }}
+      {{ else }}
+        <li>
+        {{ $same_ref := where ($.Page.Store.Get "references") "ref" $ref }}
+        {{ range $same_ref }}
+          <span id="ref-{{ .idx }}"><a href="#cite-{{ .idx }}">[{{ .idx }}]</a></span>
+        {{ end }}
+        <span>- <a href="{{ .ref }}">{{ .ref }}</a></span>
+        </li>
+        {{ $seen = append . $seen }}
+      {{ end }}
+    {{ end }}
+  </ul>
+</div>
+{{ end }}
