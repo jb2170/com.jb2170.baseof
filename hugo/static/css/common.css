@@ -134,6 +134,18 @@ figure video {
   box-sizing: border-box; /* include padding */
 }
 
+/* <details> styling */
+
+details details {
+  margin-inline-start: 2ch;
+}
+
+.big-summary {
+  font-size: 1.5em; /* Match h2 size. */
+  font-weight: bold;
+  text-decoration: underline double;
+}
+
 /* "_shortcodes/gallery.html" */
 
 .gallery {
