@@ -13,5 +13,7 @@
       {{ end }}
     </tbody>
   </table>
+  {{ else }}
+  <p>{{ partial "text-when-missing.html" "no references" }}</p>
   {{ end }}
 </details>
